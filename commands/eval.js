@@ -1,20 +1,11 @@
-exports.run = (client, message) => {
-  const config = require("./config.json");
-  const args = message.content.split(" ").slice(1);
-
-  if (message.content.startsWith(config.prefix + "eval")) {
-    if(!message.member.roles.has(devRoleID)) return;
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
-
-      message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
+exports.run = async (client, message, args, level) => {
+  const code = args.join(" ");
+  try {
+    const evaled = eval(code);
+    const clean = await client.clean(client, evaled);
+    message.channel.send(`\`\`\`js\n${clean}\n\`\`\``);
+  } catch (err) {
+    message.channel.send(`\`ERROR\` \`\`\`xl\n${await client.clean(client, err)}\n\`\`\``);
   }
 };
 exports.conf = {
