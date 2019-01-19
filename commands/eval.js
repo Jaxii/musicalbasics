@@ -1,4 +1,4 @@
-client.on("message", message => {
+exports.run = (client, message) => {
   const args = message.content.split(" ").slice(1);
 
   if (message.content.startsWith(config.prefix + "eval")) {
@@ -15,4 +15,4 @@ client.on("message", message => {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
   }
-});
+};
