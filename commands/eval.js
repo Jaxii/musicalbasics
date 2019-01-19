@@ -17,3 +17,16 @@ exports.run = (client, message) => {
     }
   }
 };
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: ["Bot Owner", "Bot Dev", "Bot Admin"]
+};
+
+exports.help = {
+  name: "eval",
+  category: "System",
+  description: "Runs arbitrary javascript",
+  usage: "eval [args]"
+};

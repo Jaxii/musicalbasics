@@ -13,3 +13,9 @@ exports.run = (client, message, args) => {
   client.commands.set(commandName, props);
   message.reply(`The command ${commandName} has been reloaded`);
 };
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["p"],
+  permLevel: ["Bot Owner", "Bot Dev", "Bot Admin"]
+};

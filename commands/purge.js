@@ -33,3 +33,17 @@ exports.run = (client, message) => {
   }
 
 }
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: ["Bot Owner", "Bot Dev", "Bot Admin", "Concetmasters", "Conductors"]
+};
+
+exports.help = {
+  name: "purge",
+  category: "System",
+  description: "Removes messages from a channel",
+  usage: "purge [amount]"
+};

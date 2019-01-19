@@ -7,5 +7,12 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: "User"
+  permLevel: "Accidentals"
+};
+
+exports.help = {
+  name: "ping",
+  category: "System",
+  description: "Pings... then pongs!",
+  usage: "ping"
 };

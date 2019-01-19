@@ -79,5 +79,3 @@ client.permlevel = message => {
     }
     return permlvl;
   };
-
-/*
