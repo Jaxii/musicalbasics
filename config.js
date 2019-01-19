@@ -7,7 +7,9 @@ const config = {
 
   // lvl8, in-between role
   "dev": [],
-
+  //developer role
+  "devRoleID": "533157875963396097",
+  
   "token": "redacted",
 
 
@@ -34,7 +36,7 @@ const config = {
     // This is your permission level, the staff levels should always be above the rest of the roles.
     { level: 2,
       // This is the name of the role.
-      name: "Concermasters",
+      name: "Concertmasters",
 
       check: (message) => {
         try {
