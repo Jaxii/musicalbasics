@@ -1,4 +1,4 @@
-exports.run = (client, message) => {
+exports.run = async (client, message) => {
 
   // variables
   const config = require("./config.json");
