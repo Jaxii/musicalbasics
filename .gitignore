@@ -1,6 +1,6 @@
 # Config
 config.js
-config
+.config
 # Logs
 logs
 *.log
