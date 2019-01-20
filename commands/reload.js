@@ -19,3 +19,10 @@ exports.conf = {
   aliases: ["p"],
   permLevel: ["Bot Owner", "Bot Dev", "Bot Admin"]
 };
+
+exports.help = {
+  name: "reload",
+  category: "System",
+  description: "Reloads a command",
+  usage: "reload [command]"
+};
