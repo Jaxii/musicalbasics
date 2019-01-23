@@ -1,10 +1,14 @@
 const Discord = require("discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
+const { Client, Util } = require('discord.js');
+const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-
 const client = new Discord.Client();
-const config = require("./config.json");
+const config = require("./config.js");
+const client = new Client({ disableEveryone: true });
+const youtube = new YouTube(config.GOOGLE_API_KEY);
+const queue = new Map();
 
 client.config = config;
 
