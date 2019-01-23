@@ -9,9 +9,9 @@ const config = {
   "dev": [],
   //developer role
   "devRoleID": "533157875963396097",
-  
-  "token": "redacted",
 
+  "token": "REDACTED",
+  "GOOGLE_API_KEY": "REDACTED",
 
   "defaultSettings" : {
     "prefix": "-",
