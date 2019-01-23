@@ -1,7 +1,23 @@
+const config = require("./config.json");
+
 exports.run = async (client, message, args, level) => {
-//todo
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 exports.conf = {
   enabled: true,
   guildOnly: false,
