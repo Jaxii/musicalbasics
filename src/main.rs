@@ -179,6 +179,13 @@ while let Some(member_result) = members.next().await {
                             member.to_owned().add_role(&ctx.http, &SpecialCrews).await?;
                         }
                     }
+
+                    &NotificationSquad => {
+                        member.to_owned().remove_role(&ctx.http, &NotificationSquad).await?;
+                        if !member.roles.contains(&CommunityUpdates) {
+                            member.to_owned().add_role(&ctx.http, &CommunityUpdates).await?;
+                        }
+                    }
                     _ => {
                         //do nothing
                     }

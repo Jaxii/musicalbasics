@@ -23,3 +23,9 @@ pub const WelcomeCrew: RoleId = serenity::model::id::RoleId(729806360165875812);
 pub const BirthdayCrew: RoleId = RoleId(772639405806321705);
 
 pub const SpecialCrews: RoleId = RoleId(1060658210253586532);
+
+//sep
+
+pub const NotificationSquad: RoleId = RoleId(616733787610546186);
+
+pub const CommunityUpdates: RoleId = RoleId(1060658202133418024);
