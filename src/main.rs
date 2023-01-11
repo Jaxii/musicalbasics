@@ -1,7 +1,7 @@
-pub mod consts;
 
+pub mod consts;
 use std::env;
-use std::f32::consts::PI;
+use crate::consts::*;
 use std::time::Duration;
 
 use serenity::futures::StreamExt;
@@ -95,30 +95,10 @@ async fn owner_check(
 async fn bing(ctx: &Context, msg: &Message) -> CommandResult {
     msg.reply(ctx, "Bong!").await?;
 
+
     Ok(())
 }
 //sep
-const Pianist: RoleId = RoleId(515169319353712650);
-const Composers: RoleId = RoleId(672233287049281567);
-const MusicProducer: RoleId = RoleId(719969084867084298);
-
-const MusicChannels: RoleId = RoleId(1060658091416371351);
-
-//sep
-const NoJudgement: RoleId  = RoleId(697542332278374433);
-const Debates: RoleId = RoleId(616734081966669834);
-
-const SeriousDiscussions: RoleId = RoleId(1060658305179066535);
-//sep
-const Stem: RoleId = RoleId(692855571237568592);
-const ThoughtProvoking: RoleId = RoleId(1060658421797507082);
-//sep
-
-
-const WelcomeCrew: RoleId = serenity::model::id::RoleId(729806360165875812);
-const BirthdayCrew: RoleId = RoleId(772639405806321705);
-
-const SpecialCrews: RoleId = RoleId(1060658210253586532);
 
 #[command]
 async fn swap_roles(ctx: &Context, msg: &Message) -> CommandResult {
