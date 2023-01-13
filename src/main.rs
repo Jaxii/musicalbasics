@@ -121,11 +121,12 @@ async fn swap_roles(ctx: &Context, msg: &Message) -> CommandResult {
 
 
     let guild_id = msg.guild_id.unwrap();
-
+        let mut i = 0;
     let mut members = guild_id.members_iter(&ctx).boxed();
 while let Some(member_result) = members.next().await {
     match member_result {
         Ok(member) => {
+            i+=1;
             for i in &member.roles {
                 match i {
                     &Pianist => {
@@ -149,13 +150,13 @@ while let Some(member_result) = members.next().await {
 
                     &NoJudgement => {
                         member.to_owned().remove_role(&ctx.http, &NoJudgement).await?;
-                        if !member.roles.contains(&SeriousDiscussions) { 
+                        if !member.roles.contains(&SeriousDiscussions) && member.roles.contains(&RoleId(518943001431769105)) { 
                             member.to_owned().add_role(&ctx.http, &SeriousDiscussions).await?;
                         }
                     },
                     &Debates => {
                         member.to_owned().remove_role(&ctx.http, &Debates).await?;
-                        if !member.roles.contains(&SeriousDiscussions) { 
+                        if !member.roles.contains(&SeriousDiscussions) && member.roles.contains(&RoleId(518943001431769105)) { 
                             member.to_owned().add_role(&ctx.http, &SeriousDiscussions).await?;
                         }
                     },
@@ -186,12 +187,23 @@ while let Some(member_result) = members.next().await {
                             member.to_owned().add_role(&ctx.http, &CommunityUpdates).await?;
                         }
                     }
+
+                    &Multilingual => {
+                        member.to_owned().remove_role(&ctx.http, &Multilingual).await?;
+                        if(!member.roles.contains(&SocialFun)) {
+                            member.to_owned().add_role(&ctx.http, &SocialFun).await?;
+                        }
+                    }
                     _ => {
                         //do nothing
                     }
               
                 }
+                if(!member.roles.contains(&RoleId(518943001431769105)) && member.roles.contains(&SeriousDiscussions)) {
+                    member.to_owned().remove_role(&ctx.http, &SeriousDiscussions);
+                }
             }
+            println!("{}", i );
         },
         Err(error) => eprintln!("Uh oh!  Error: {}", error),
     }

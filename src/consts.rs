@@ -7,7 +7,11 @@ pub const Composers: RoleId = RoleId(672233287049281567);
 pub const MusicProducer: RoleId = RoleId(719969084867084298);
 
 pub const MusicChannels: RoleId = RoleId(1060658091416371351);
+//sep
 
+pub const Multilingual: RoleId = RoleId(707883195135426590);
+
+pub const SocialFun: RoleId = RoleId(1060658312435204156);
 //sep
 pub const NoJudgement: RoleId  = RoleId(697542332278374433);
 pub const Debates: RoleId = RoleId(616734081966669834);
